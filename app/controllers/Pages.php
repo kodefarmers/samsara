@@ -4,6 +4,15 @@ class Pages
 {
   public function __construct()
   {
-    echo 'loaded';
+  }
+
+  // need this for our defaults
+  public function index()
+  {
+  }
+
+  public function about($id)
+  {
+    echo $id;
   }
 }
