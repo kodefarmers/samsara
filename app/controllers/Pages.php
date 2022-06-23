@@ -4,6 +4,7 @@ class Pages extends Controller
 {
   public function __construct()
   {
+    $this->postModel = $this->model('Post');
   }
 
   // need this for our defaults
