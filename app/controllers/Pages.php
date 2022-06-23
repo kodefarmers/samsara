@@ -1,6 +1,6 @@
 <?php
 
-class Pages
+class Pages extends Controller
 {
   public function __construct()
   {
@@ -9,6 +9,7 @@ class Pages
   // need this for our defaults
   public function index()
   {
+    /* $this->view('hello'); */
   }
 
   public function about($id)
