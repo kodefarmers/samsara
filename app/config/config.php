@@ -1,15 +1,15 @@
 <?php
 // DB Params
 define('DB_HOST', 'localhost');
-define('DB_USER', 'alphajr');
-define('DB_PASS', 'password');
-define('DB_NAME', 'samsara');
+define('DB_USER', '_YOUR_USER_');
+define('DB_PASS', '_YOUR_PASS_');
+define('DB_NAME', '_YOUR_DB_NAME');
 
 // App root
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // URL root
-define('URLROOT', 'http://localhost/projects/php/samsara');
+define('URLROOT', '_YOUR_URL_');
 
 // Site name
 define('SITENAME', 'Samsara');
