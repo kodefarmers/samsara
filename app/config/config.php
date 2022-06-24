@@ -12,4 +12,4 @@ define('APPROOT', dirname(dirname(__FILE__)));
 define('URLROOT', '_YOUR_URL_');
 
 // Site name
-define('SITENAME', 'Samsara');
+define('SITENAME', '_YOUR_SITE_NAME_');
