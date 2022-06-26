@@ -1,3 +1,4 @@
+<?php flash('register_success') ?>
 <h2>Login</h2>
 <p>Fill in the form below to login</p>
 <form action="<?php echo URLROOT; ?>/users/login" method="post">
