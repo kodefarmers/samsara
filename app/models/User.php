@@ -1,6 +1,7 @@
 <?php
 
-class User{
+class User
+{
   private $db;
 
   public function __construct()
@@ -8,17 +9,37 @@ class User{
     $this->db = new Database;
   }
 
+  // Register User
+  public function register($data)
+  {
+    $this->db->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
+
+    // Bind values
+    $this->db->bind(':name', $data['name']);
+    $this->db->bind(':email', $data['email']);
+    $this->db->bind(':password', $data['password']);
+
+    // Execute (INSERT, UPDATE, DELETE)
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   // Find user by email
-  public function findUserByEmail($email){
+  public function findUserByEmail($email)
+  {
     $this->db->query('SELECT * FROM users WHERE email = :email');
+    // Bind values
     $this->db->bind(':email', $email);
 
     $row = $this->db->getSingle();
 
     // Check row
-    if($this->db->rowCount() > 0){
+    if ($this->db->rowCount() > 0) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
