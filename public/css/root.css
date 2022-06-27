@@ -1,0 +1,49 @@
+/* Lato Font Import
+ * Light 300
+ * Regular 400
+ * Regulsr 400 Italic
+ * Bold 700
+ * Bold 700 Italic
+ * Black 900
+ */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap');
+
+:root{
+  --color-white: hsl(252, 30%, 100%);
+  --color-light: hsl(252, 30%, 95%);
+  --color-gray: hsl(0, 0%, 93%);
+  --color-primary: hsl(208, 100%, 51%); 
+  --color-secondary: hsl(252, 100%, 90%);
+  --color-success: hsl(120, 95%, 65%);
+  --color-danger: hsl(7, 99%, 70%);
+  --color-dark: hsl(252, 30%, 17%);
+  --color-black: hsl(252, 30%, 10%);
+
+  --border-radius: 2rem;
+  --card-border-radius: 1rem;
+  --btn-padding: 0.6rem 2rem;
+  --card-padding: 1rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--color-dark);
+  background: var(--color-light);
+  overflow-x: hidden;
+}
+
+/* General Styles */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
