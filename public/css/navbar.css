@@ -1,0 +1,32 @@
+nav {
+  width: 100%;
+  background: var(--color-white);
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__profile-image {
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav__profile-image img{
+  display: block;
+  width: 100%;
+}
