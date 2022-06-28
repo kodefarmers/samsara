@@ -4,8 +4,9 @@ main {
 }
 
 .main__container {
+  width: 95%;
   display: grid; 
-  grid-template-columns: 18vw auto;
+  grid-template-columns: 5vw auto;
   column-gap: 2rem;
   position: relative;
 }
@@ -38,7 +39,7 @@ main {
 .sidebar-menuitem i {
   font-size: 1.4rem;
   color: var(--color-gray);
-  margin: 0 0 0 2rem;
+  margin: 0 0 0 1rem;
 }
 
 .sidebar-menuitem h3 {

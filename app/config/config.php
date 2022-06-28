@@ -1,9 +1,7 @@
 <?php
+
 // DB Params
-define('DB_HOST', 'localhost');
-define('DB_USER', 'alphajr');
-define('DB_PASS', 'password');
-define('DB_NAME', 'samsara');
+require_once './dbCredentials.php';
 
 // App root
 define('APPROOT', dirname(dirname(__FILE__)));

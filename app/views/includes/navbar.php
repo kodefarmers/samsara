@@ -1,7 +1,7 @@
 <nav>
   <div class="container nav__container">
     <h2 class="nav__container-logo">
-      <i>samsara</i>
+      <i><?php echo strtolower(SITENAME); ?></i>
     </h2>
     <div class="nav__profile">
       <div class="nav__profile-image">
