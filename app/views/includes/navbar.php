@@ -1,5 +1,5 @@
 <nav>
-  <div class=" container nav__container">
+  <div class="container nav__container">
     <h2 class="nav__container-logo">
       <i>samsara</i>
     </h2>

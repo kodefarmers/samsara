@@ -1,0 +1,55 @@
+main {
+  position: relative;
+  top: 5.4rem;
+}
+
+.main__container {
+  display: grid; 
+  grid-template-columns: 18vw auto;
+  column-gap: 2rem;
+  position: relative;
+}
+
+.main-container-left {
+  height: max-content;
+  position: sticky;
+  top: var(--sticky-top-left);
+}
+
+.sidebar {
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: 1rem 0 1rem 0;
+}
+
+.sidebar-menuitem {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+  position: relative;
+}
+
+.sidebar-menuitem:hover {
+  background: var(--color-light);
+}
+
+.sidebar-menuitem i {
+  font-size: 1.4rem;
+  color: var(--color-gray);
+  margin: 0 0 0 2rem;
+}
+
+.sidebar-menuitem h3 {
+  margin: 0 0 0 1.5rem;
+  font-size: 1rem;
+}
+
+.sidebar .active {
+  background: var(--color-light);
+}
+
+.sidebar .active i, .sidebar .active h3{
+  color: var(--color-primary);
+}

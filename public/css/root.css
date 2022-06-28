@@ -11,7 +11,7 @@
 :root{
   --color-white: hsl(252, 30%, 100%);
   --color-light: hsl(252, 30%, 95%);
-  --color-gray: hsl(0, 0%, 93%);
+  --color-gray: hsl(0, 0%, 75%);
   --color-primary: hsl(208, 100%, 51%); 
   --color-secondary: hsl(252, 100%, 90%);
   --color-success: hsl(120, 95%, 65%);
@@ -23,6 +23,9 @@
   --card-border-radius: 1rem;
   --btn-padding: 0.6rem 2rem;
   --card-padding: 1rem;
+
+  --sticky-top-left: 5.4rem;
+  --sticky-top-right: -18rem;
 }
 
 *, *::before, *::after {
