@@ -1,7 +1,7 @@
 <?php
 
 // DB Params
-require_once './dbCredentials.php';
+require_once 'dbCredentials.php';
 
 // App root
 define('APPROOT', dirname(dirname(__FILE__)));
