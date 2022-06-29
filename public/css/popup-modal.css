@@ -1,0 +1,25 @@
+.popup {
+  background: rgba(255, 255, 255, 0.3);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.popup-card {
+  background: var(--color-white);
+  padding: 3rem;
+  border-radius: var(--card-border-radius);
+  width: 50%;
+}
+
+.popup-card input[type="text"], textarea {
+  background: var(--color-gray);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}

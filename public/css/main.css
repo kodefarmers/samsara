@@ -54,3 +54,35 @@ main {
 .sidebar .active i, .sidebar .active h3{
   color: var(--color-primary);
 }
+
+.main-container-right {
+  height: max-content;
+  position: sticky;
+  top: var(--sticky-top-right);
+}
+
+.contents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.child {
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+}
+
+.contents-child2 {
+  grid-column: span 2; /* For a grid that needs to take 2 columns */
+}
+
+.child3-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.child3-content {
+  background-color: var(--color-gray);
+}
