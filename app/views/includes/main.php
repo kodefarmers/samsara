@@ -25,7 +25,7 @@
         <!-- TODO -->
         <div class="child contents-child3">
           <div class="child3-head">
-            <span>todo</span><button><i class="uil uil-plus-square"></i></button>
+            <span>todo</span><button class="add"><i class="uil uil-plus-square"></i></button>
           </div>
           <div class="child3-content">
             <div class="child3-content-item1">

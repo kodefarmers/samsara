@@ -86,3 +86,26 @@ main {
 .child3-content {
   background-color: var(--color-gray);
 }
+
+/* MEDIA QUERIES FOR LAPTOPS AND PCS */
+@media screen and (max-width: 1200px){
+  .main__container {
+    grid-template-columns: 4rem auto;
+    gap: 1rem;
+  }
+
+  .main-container-left {
+    width: 5rem;
+    z-index: 5;
+  }
+
+  .sidebar {
+    padding: 0.5rem 0 0.5rem 0;
+  }
+}
+
+/* MEDIA QUERIES FOR TABLETS AND MOBILE PHONES */
+/* 
+@media screen and (max-width: 992px){
+}
+*/

@@ -72,3 +72,10 @@ body {
   background: var(--color-primary);
   color: var(--color-white);
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1200px){
+  .container {
+    width: 96%;
+  } 
+}
