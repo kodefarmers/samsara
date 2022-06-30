@@ -1,20 +1,18 @@
 <div class="popup">
   <div class="popup-card">
     <h2>Add Todo</h2>
-    <p>Give title, body and set remainder!</p>
     <div class="popup-card-title">
-      <h4>Title</h4>
+      <p>Title</p>
       <input type="text" name="title" id="" placeholder="Title" />
     </div>
     <div class="popup-card-body">
-      <h4>Description</h4>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <p>Description</p>
+      <textarea name="description" id="" cols="30" rows="10" placeholder="Description"></textarea>
     </div>
-    <div class="popup-card-options">
-      <a>
-        <span><i class="uil uil-stopwatch"></i></span>
-        <input type="submit" value="Save">
-      </a>
+    <div class="popup-card-remainder">
+      <p>Set Remainder</p>
+      <input type="datetime-local" name="remainder" id="">
     </div>
+    <input class="btn btn-primary" type="submit" value="Save" />
   </div>
 </div>

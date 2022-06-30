@@ -11,6 +11,7 @@
 :root{
   --color-white: hsl(252, 30%, 100%);
   --color-light: hsl(252, 30%, 95%);
+  --color-faded: hsl(204, 8%, 76%);;
   --color-gray: hsl(0, 0%, 75%);
   --color-primary: hsl(208, 100%, 51%); 
   --color-secondary: hsl(252, 100%, 90%);
@@ -19,10 +20,11 @@
   --color-dark: hsl(252, 30%, 17%);
   --color-black: hsl(252, 30%, 10%);
 
-  --border-radius: 2rem;
+  --border-radius: 1.5rem;
   --card-border-radius: 1rem;
   --btn-padding: 0.6rem 2rem;
   --card-padding: 1rem;
+  --input-padding: 0.6rem 1rem;
 
   --sticky-top-left: 5.4rem;
   --sticky-top-right: -18rem;
@@ -49,4 +51,24 @@ body {
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--btn-padding);
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 250ms ease;
+  font-size: 0.9rem;
+  width: max-content;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
 }

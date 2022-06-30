@@ -18,8 +18,33 @@
   width: 50%;
 }
 
-.popup-card input[type="text"], textarea {
-  background: var(--color-gray);
+.popup-card h2{
+  margin: 0 0 1rem 0;
+}
+
+.popup-card p{
+  text-align: left;
+  margin: 0 0 0.5rem 0;
+}
+
+.popup-card input[type="text"], input[type="datetime-local"], .popup-card textarea {
+  background: var(--color-light);
   border-radius: var(--border-radius);
   padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  color: var(--color-dark);
+  margin: 0 0 1rem 0;
+}
+
+.popup-card textarea {
+  resize: none;
+}
+
+.popup-card input[type="text"]::placeholder, textarea::placeholder {
+  color: var(--color-gray);
+}
+
+.popup-card-options i{
+  font-size: 1.4rem;
 }
