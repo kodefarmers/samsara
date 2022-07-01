@@ -13,6 +13,6 @@
       <p>Set Remainder</p>
       <input type="datetime-local" name="remainder" id="">
     </div>
-    <input class="btn btn-primary" type="submit" value="Save" />
+    <input class="btn btn-text btn-primary" type="submit" value="Save" />
   </div>
 </div>

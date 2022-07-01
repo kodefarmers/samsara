@@ -68,24 +68,39 @@ main {
   column-gap: 10px;
 }
 
+.card-head {
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.card-head-title{
+  font-weight: 700;
+}
+
 .child {
   background-color: var(--color-white);
   border-radius: var(--card-border-radius);
+  height: max-content;
+}
+
+.child-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .contents-child2 {
   grid-column: span 2; /* For a grid that needs to take 2 columns */
 }
 
-.child3-head {
+.child3-content-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  background-color: var(--color-white);
 }
 
-.child3-content {
-  background-color: var(--color-gray);
-}
 
 /* MEDIA QUERIES FOR LAPTOPS AND PCS */
 @media screen and (max-width: 1200px){

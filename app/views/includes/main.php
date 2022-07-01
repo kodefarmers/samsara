@@ -19,32 +19,72 @@
     <div class="main__container-right">
       <div class="contents">
         <!-- Clock -->
-        <div class="child contents-child1">Child1</div>
+        <div class="child contents-child1">
+          <div class="child-head child1 card-head">
+            <span class="card-head-title">child1</span>
+          </div>
+          <div class="child1-content">
+            <div class="child1-content-item">
+            </div>
+          </div>
+        </div>
         <!-- Weather -->
-        <div class="child contents-child2">Child2</div>
+        <div class="child contents-child2">
+          <div class="child-head child2 card-head">
+            <span class="card-head-title">child2</span>
+          </div>
+          <div class="child2-content">
+            <div class="child2-content-item">
+            </div>
+          </div>
+        </div>
         <!-- TODO -->
         <div class="child contents-child3">
-          <div class="child3-head">
-            <span>todo</span><button class="add"><i class="uil uil-plus-square"></i></button>
+          <div class="child-head child3 card-head">
+            <span class="card-head-title">todo</span>
+            <button class="add btn btn-primary">
+              <i class="uil uil-plus-square"></i>
+            </button>
           </div>
           <div class="child3-content">
-            <div class="child3-content-item1">
-              <a>
-                <span><i class="uil uil-check-circle"></i></span>
-              </a> do dinner
-              <a>
-                <span><i class="uil uil-edit"></i></span>
-              </a>
-              <a>
-                <span><i class="uil uil-trash-alt"></i></span>
-              </a>
+            <div class="child3-content-item">
+              <div class="child3-content-left">
+                <input type="checkbox" />
+              </div>
+              <div class="child3-content-middle">
+                <span class="todo-task"> do dinner </span>
+              </div>
+              <div class="child3-content-right">
+                <button class="btn btn-success">
+                  <i class="uil uil-edit"></i>
+                </button>
+                <button class="btn btn-danger">
+                  <i class="uil uil-trash-alt"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         <!-- Notes -->
-        <div class="child contents-child4">Child4</div>
+        <div class="child contents-child4">
+          <div class="child-head child4 card-head">
+            <span class="card-head-title">child4</span>
+          </div>
+          <div class="child4-content">
+            <div class="child4-content-item">
+            </div>
+          </div>
+        </div>
         <!-- Hourly Weather -->
-        <div class="child contents-child5">Child5</div>
+        <div class="child contents-child5">
+          <div class="child-head child5 card-head">
+            <span class="card-head-title">child2</span>
+          </div>
+          <div class="child5-content">
+            <div class="child5-content-item">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
