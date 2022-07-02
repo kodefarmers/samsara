@@ -101,6 +101,10 @@ main {
   background-color: var(--color-white);
 }
 
+.child3-content-right {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* MEDIA QUERIES FOR LAPTOPS AND PCS */
 @media screen and (max-width: 1200px){

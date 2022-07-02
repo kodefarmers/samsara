@@ -62,4 +62,16 @@ class Todos extends Controller
       $this->view('pages/index', $data);
     }
   }
+
+  public function delete($id)
+  {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if ($this->todoModel->delete($id)) {
+        flash('todo_message', 'Todo task removed');
+        redirect('pages/index');
+      }
+    } else {
+      redirect('pages/index');
+    }
+  }
 }

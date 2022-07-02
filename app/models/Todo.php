@@ -40,4 +40,18 @@ class Todo
       return false;
     }
   }
+
+  public function delete($id)
+  {
+    $this->db->query('DELETE FROM todos WHERE id = :id');
+
+    $this->db->bind(':id', $id);
+
+    // Execute (INSERT, UPDATE, DELETE)
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

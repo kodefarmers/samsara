@@ -22,8 +22,7 @@
     </div>
     <div class="main__container-right">
       <!-- Flash Message Div -->
-      <?php flash('todo_add_success') ?>
-      <?php flash('todo_add_error') ?>
+      <?php flash('todo_message') ?>
       <div class="contents">
         <!-- Clock -->
         <div class="child contents-child1">
@@ -66,9 +65,11 @@
                   <button class="btn btn-success">
                     <i class="uil uil-edit"></i>
                   </button>
-                  <button class="btn btn-danger">
-                    <i class="uil uil-trash-alt"></i>
-                  </button>
+                  <form action="<?php echo URLROOT; ?>/todos/delete/<?php echo $task->todoId ?>" method="POST">
+                    <button class="btn btn-danger">
+                      <i class="uil uil-trash-alt"></i>
+                    </button>
+                  </form>
                 </div>
               </div>
             <?php endforeach; ?>
