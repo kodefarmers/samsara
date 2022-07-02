@@ -6,7 +6,7 @@ session_start();
 // DISPLAY in view - <?php echo flash('register_success')
 
 // $class will have our flash message css class
-function flash($name = '', $message = '', $class = 'alert alert-success')
+function flash($name = '', $message = '', $class = 'message-success')
 {
   if (!empty($name)) {
     if (!empty($message) && empty($_SESSION[$name])) {
@@ -23,7 +23,9 @@ function flash($name = '', $message = '', $class = 'alert alert-success')
       $_SESSION[$name . '_class'] = $class;
     } elseif (empty($message) && !empty($_SESSION[$name])) {
       $class = !empty($_SESSION[$name . '_class']) ? $_SESSION[$name . '_class'] : '';
-      echo '<h3 class="' . $class . 'id="msg-flash">' . $_SESSION[$name] . '</h3>'; // here will be a div for our flash message
+      echo '<div class="flash-div">
+        <div class="flash-div-message ' . $class . '">' . $_SESSION[$name] . '</div>
+      </div>';
 
       unset($_SESSION[$name]);
       unset($_SESSION[$name . '_class']);

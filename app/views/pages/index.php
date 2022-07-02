@@ -21,6 +21,9 @@
       </div>
     </div>
     <div class="main__container-right">
+      <!-- Flash Message Div -->
+      <?php flash('todo_add_success') ?>
+      <?php flash('todo_add_error') ?>
       <div class="contents">
         <!-- Clock -->
         <div class="child contents-child1">
@@ -95,6 +98,10 @@
     </div>
   </div>
 </main>
+
+
+<?php //echo '<div class="' . $class . '" id="msg-flash">' . $_SESSION[$name] . '</div>' 
+?>
 
 <?php require_once APPROOT . '/views/includes/popup-modal.php'; ?>
 

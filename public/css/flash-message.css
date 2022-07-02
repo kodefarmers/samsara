@@ -1,0 +1,22 @@
+.flash-div {
+  margin-top: 5;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.flash-div-message {
+  background-color: var(--color-gray);
+  color: var(--color-white);
+  padding: 0.7rem;
+  width: max-content;
+  border-radius: var(--card-border-radius);
+}
+
+.message-alert {
+  background-color: var(--color-danger);
+}
+
+.message-success {
+  background-color: var(--color-success);
+}
