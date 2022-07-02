@@ -56,10 +56,10 @@
             <?php foreach ($data['tasks'] as $task) : ?>
               <div class="child3-content-item">
                 <div class="child3-content-left">
-                  <input type="checkbox" />
+                  <input type="checkbox" id="todo-checkbox-task<?php echo $task->todoId ?>" <?php echo ($task->checked) ? "checked" : '' ?> />
                 </div>
                 <div class="child3-content-middle">
-                  <span class="todo-task"> <?php echo $task->title ?> </span>
+                  <span class="todo-task" id="todo-task<?php echo $task->todoId ?>" style="text-decoration: <?php echo ($task->checked) ? 'line-through' : '' ?>; font-style: <?php echo ($task->checked) ? 'italic' : 'normal' ?>;"> <?php echo $task->title ?> </span>
                 </div>
                 <div class="child3-content-right">
                   <button class="btn btn-success">
@@ -99,10 +99,6 @@
     </div>
   </div>
 </main>
-
-
-<?php //echo '<div class="' . $class . '" id="msg-flash">' . $_SESSION[$name] . '</div>' 
-?>
 
 <?php require_once APPROOT . '/views/includes/popup-modal.php'; ?>
 
