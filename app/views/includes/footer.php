@@ -1,5 +1,7 @@
-</body>
+<script src="<?php echo URLROOT; ?>/js/main.js"></script>
+<script src="<?php echo URLROOT; ?>/js/popup.js"></script>
+<script src="<?php echo URLROOT; ?>/js/ajax.js"></script>
 
-<script src="<?php echo URLROOT; ?>/js/main.js" type="module"></script>
+</body>
 
 </html>

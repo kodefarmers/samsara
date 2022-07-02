@@ -14,5 +14,3 @@ const closePopupModal = (e) => {
 popupModal.addEventListener('click', closePopupModal);
 
 add.addEventListener('click', openPopupModal);
-
-export {add}

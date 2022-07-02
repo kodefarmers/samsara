@@ -7,6 +7,10 @@ class Todos extends Controller
     $this->todoModel = $this->model('Todo');
   }
 
+  public function index()
+  {
+  }
+
   public function getTodos()
   {
     // Get Todos
@@ -60,6 +64,18 @@ class Todos extends Controller
 
       // Load view
       $this->view('pages/index', $data);
+    }
+  }
+
+  public function check($id)
+  {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if ($this->todoModel->check($id)) {
+        flash('todo_message', 'Todo task checked');
+        redirect('pages/index');
+      }
+    } else {
+      redirect('pages/index');
     }
   }
 
