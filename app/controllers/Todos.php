@@ -31,6 +31,7 @@ class Todos extends Controller
       $data = [
         'title' => trim($_POST['title']),
         'description' => trim($_POST['description']),
+        'remainder' => trim($_POST['remainder']),
       ];
 
       // Validate Inputs
@@ -59,12 +60,72 @@ class Todos extends Controller
       $data = [
         'title' => '',
         'description' => '',
+        'remainder' => '',
         'title_error' => '',
       ];
 
       // Load view
       $this->view('pages/index', $data);
     }
+  }
+
+  public function edit($id)
+  {
+    // Check for POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      // Process Form
+
+      // Sanitize POST data
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+      // Init Data
+      $data = [
+        'title' => trim($_POST['title']),
+        'description' => trim($_POST['description']),
+        'remainder' => trim($_POST['remainder']),
+      ];
+
+      // Validate Inputs
+
+      // Validate Title
+      if (empty($data['title'])) {
+        $data['title_error'] = 'Task cannot be empty';
+      }
+
+      if (empty($data['title_error'])) {
+        // Validated
+        // Insert Todo
+        if ($this->todoModel->edit($id, $data)) {
+          flash('todo_message', 'Todo Edited Successfully');
+          redirect(''); // Helper function
+        } else {
+          die('Something went wrong');
+        }
+      } else {
+        // Load view with error
+        redirect('pages/index'); // Helper function
+        flash('todo_add_error', 'Todo title cannot be empty', 'message-alert');
+      }
+    } else {
+      // Init Data
+      $data = [
+        'title' => '',
+        'description' => '',
+        'remainder' => '',
+        'title_error' => '',
+      ];
+
+      // Load view
+      $this->view('', $data);
+    }
+  }
+
+  public function get($id)
+  {
+    $task = $this->todoModel->getSingleTodo($id);
+
+    /* print_r($task); */
+    echo json_encode(json_decode(json_encode($task), true));
   }
 
   public function check($id)

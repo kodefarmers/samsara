@@ -56,14 +56,14 @@
             <?php foreach ($data['tasks'] as $task) : ?>
               <div class="child3-content-item">
                 <div class="child3-content-left">
-                  <input type="checkbox" onclick="updateTodoStatus(this)" data-checkbox-id="<?php echo $task->todoId ?>" <?php echo ($task->checked) ? "checked" : '' ?>>
+                  <input type="checkbox" onchange="updateTodoStatus(this)" data-checkbox-id="<?php echo $task->todoId ?>" <?php echo ($task->checked) ? "checked" : '' ?>>
                 </div>
                 <div class="child3-content-middle">
                   <span class="todo-task <?php echo ($task->checked) ? 'completed-task' : '' ?>" id="task-<?php echo $task->todoId ?>"> <?php echo $task->title ?> </span>
                 </div>
                 <div class="child3-content-right">
-                  <button class="btn btn-success">
-                    <i class="uil uil-edit"></i>
+                  <button class="edit btn btn-success">
+                    <i id="<?php echo $task->todoId ?>" class="uil uil-edit"></i>
                   </button>
                   <form action="<?php echo URLROOT; ?>/todos/delete/<?php echo $task->todoId ?>" method="POST">
                     <button class="btn btn-danger">
