@@ -46,13 +46,13 @@ class Todos extends Controller
         // Insert Todo
         if ($this->todoModel->insert($data)) {
           flash('todo_add_success', 'Todo Added Successfully');
-          redirect('pages/index'); // Helper function
+          redirect(''); // Helper function
         } else {
           die('Something went wrong');
         }
       } else {
         // Load view with error
-        redirect('pages/index'); // Helper function
+        redirect(''); // Helper function
         flash('todo_add_error', 'Todo title cannot be empty', 'message-alert');
       }
     } else {
@@ -103,7 +103,7 @@ class Todos extends Controller
         }
       } else {
         // Load view with error
-        redirect('pages/index'); // Helper function
+        redirect(''); // Helper function
         flash('todo_add_error', 'Todo title cannot be empty', 'message-alert');
       }
     } else {
@@ -133,10 +133,10 @@ class Todos extends Controller
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if ($this->todoModel->check($id)) {
         flash('todo_message', 'Todo task checked');
-        redirect('pages/index');
+        redirect('');
       }
     } else {
-      redirect('pages/index');
+      redirect('');
     }
   }
 
@@ -145,10 +145,10 @@ class Todos extends Controller
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if ($this->todoModel->delete($id)) {
         flash('todo_message', 'Todo task removed');
-        redirect('pages/index');
+        redirect('');
       }
     } else {
-      redirect('pages/index');
+      redirect('');
     }
   }
 }
