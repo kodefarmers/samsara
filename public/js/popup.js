@@ -20,7 +20,6 @@ const closePopupModal = (e) => {
     // RESET VALUES THAT WAS SET WHILE EDIT WAS CLICKED
     const formAction = form.action;
     let arr = formAction.split('/');
-    console.log(arr);
     arr = arr.slice(0, -2);
     arr.push('insert');
     arr = arr.join('/');
@@ -43,7 +42,9 @@ const fetchData = (e) => {
       let response = JSON.parse(this.responseText);
       titleInput.value = response.title;
       descriptionInput.value = response.description;
-      dateTimeInput.value = response.remainder.replace(/\s/g, 'T');
+      if (response.remainder !== null) {
+        dateTimeInput.value = response.remainder.replace(/\s/g, 'T');
+      }
       popupFor.innerHTML = "Edit Todo"
 
       const formAction = form.action;

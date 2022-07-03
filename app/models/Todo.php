@@ -42,7 +42,7 @@ class Todo
     $this->db->bind(':userid', 6);
     $this->db->bind(':title', $data['title']);
     $this->db->bind(':description', $data['description']);
-    $this->db->bind(':remainder', $data['remainder']);
+    $this->db->bind(':remainder', ($data['remainder'] !== '') ? $data['remainder'] : NULL);
 
     // Execute (INSERT, UPDATE, DELETE)
     if ($this->db->execute()) {

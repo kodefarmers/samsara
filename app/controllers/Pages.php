@@ -15,6 +15,7 @@ class Pages extends Controller
   {
 
     $tasks = $this->todoControls->getTodos();
+
     $data = [
       "tasks" => $tasks
     ];
