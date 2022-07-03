@@ -34,8 +34,6 @@ class Todos extends Controller
         'remainder' => trim($_POST['remainder']),
       ];
 
-      print_r($data['remainder']);
-
       // Validate Inputs
 
       // Validate Title
