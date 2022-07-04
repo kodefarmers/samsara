@@ -17,14 +17,13 @@ const openPopupModal = () => {
 const closePopupModal = (e) => {
   if (e.target.classList.contains('popup')) {
     popupModal.style.display = 'none';
-    // RESET VALUES THAT WAS SET WHILE EDIT WAS CLICKED
-    const formAction = form.action;
-    let arr = formAction.split('/');
-    arr = arr.slice(0, -2);
-    arr.push('insert');
+
+    let arr = URLROOT.split('/');
+    arr.push('todos', 'insert');
     arr = arr.join('/');
     form.action = arr;
 
+    // RESET VALUES THAT WAS SET WHILE EDIT WAS CLICKED
     titleInput.value = '';
     descriptionInput.value = '';
     dateTimeInput.value = '';
@@ -47,9 +46,7 @@ const fetchData = (e) => {
       }
       popupFor.innerHTML = "Edit Todo"
 
-      const formAction = form.action;
-      let arr = formAction.split('/');
-      arr = arr.slice(0, -1);
+      let arr = URLROOT.split('/');
       arr.push('edit', id);
       arr = arr.join('/');
       form.action = arr;

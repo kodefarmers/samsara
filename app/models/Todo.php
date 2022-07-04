@@ -61,7 +61,7 @@ class Todo
     $this->db->bind(':id', $id);
     $this->db->bind(':title', $data['title']);
     $this->db->bind(':description', $data['description']);
-    $this->db->bind(':remainder', $data['remainder']);
+    $this->db->bind(':remainder', ($data['remainder'] !== '') ? $data['remainder'] : NULL);
     $this->db->bind(':updatedat', date_format($datetime, "Y-m-d H:i:s"));
 
     // Execute (INSERT, UPDATE, DELETE)
