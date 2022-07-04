@@ -28,6 +28,8 @@ class Todo
                       FROM todos
                       INNER JOIN users
                       ON todos.user_id = users.id
+                      WHERE DATE(todos.created_at) = CURDATE() OR
+                      checked <> 1
                       ORDER BY todos.created_at DESC');
     $results = $this->db->resultSet();
     return $results;
