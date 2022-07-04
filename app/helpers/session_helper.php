@@ -34,3 +34,12 @@ function flash($name = '', $message = '', $class = 'message-success')
 }
 
 // Above function explanation: Basically we are just storing session name as the key and then the message as the value
+
+function isLoggedIn()
+{
+  if (isset($_SESSION['user_id'])) {
+    return true;
+  } else {
+    return false;
+  }
+}

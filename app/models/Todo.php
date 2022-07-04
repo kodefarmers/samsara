@@ -39,7 +39,7 @@ class Todo
     $this->db->query('INSERT INTO todos (user_id, title, description, remainder) VALUES (:userid, :title, :description, :remainder)');
 
     // Bind values
-    $this->db->bind(':userid', 6);
+    $this->db->bind(':userid', $_SESSION['user_id']);
     $this->db->bind(':title', $data['title']);
     $this->db->bind(':description', $data['description']);
     $this->db->bind(':remainder', ($data['remainder'] !== '') ? $data['remainder'] : NULL);
