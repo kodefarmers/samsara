@@ -14,6 +14,7 @@
   --color-faded: hsl(204, 8%, 76%);;
   --color-gray: hsl(0, 0%, 75%);
   --color-primary: hsl(208, 100%, 51%); 
+  --color-primary-faded: hsl(210, 93%, 95%);
   --color-secondary: hsl(252, 100%, 90%);
   --color-success: hsl(145, 63%, 40%);
   --color-danger: hsl(356, 100%, 41%);

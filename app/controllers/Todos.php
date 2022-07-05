@@ -9,11 +9,13 @@ class Todos extends Controller
 
   public function index()
   {
+
+    $tasks = $this->todoModel->getAllTodos();
     $data = [
-      'title' => 'Todos'
+      'tasks' => $tasks
     ];
 
-    $this->view('pages/todos', $data);
+    $this->view('todos/index', $data);
   }
 
   public function getTodos()

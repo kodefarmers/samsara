@@ -35,6 +35,20 @@ class Todo
     return $results;
   }
 
+  // Fetch Todos
+  public function getAllTodos()
+  {
+    $this->db->query('SELECT *,
+                      todos.id as todoId,
+                      users.id as userId
+                      FROM todos
+                      INNER JOIN users
+                      ON todos.user_id = users.id
+                      ORDER BY todos.created_at DESC');
+    $results = $this->db->resultSet();
+    return $results;
+  }
+
   // Insert Todo
   public function insert($data)
   {
