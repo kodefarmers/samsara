@@ -9,6 +9,11 @@ class Todos extends Controller
 
   public function index()
   {
+    $data = [
+      'title' => 'Todos'
+    ];
+
+    $this->view('pages/todos', $data);
   }
 
   public function getTodos()
