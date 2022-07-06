@@ -50,4 +50,23 @@ class Note
       return false;
     }
   }
+
+  public function edit($id, $data)
+  {
+    $this->db->query('UPDATE notes SET title = :title, description = :description, updated_at = :updatedat WHERE id = :id');
+    $datetime = new DateTime('now');
+
+    // Bind values
+    $this->db->bind(':id', $id);
+    $this->db->bind(':title', $data['title']);
+    $this->db->bind(':description', $data['description']);
+    $this->db->bind(':updatedat', date_format($datetime, "Y-m-d H:i:s"));
+
+    // Execute (INSERT, UPDATE, DELETE)
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
