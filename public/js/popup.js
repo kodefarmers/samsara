@@ -21,9 +21,12 @@ const setWhichComponent = (e) => {
   });
 }
 
-const setFormAction = (component, method) => {
+const setFormAction = (component, method, id = '') => {
   let arr = URLROOT.split('/');
   arr.push(component + 's', method);
+  if (method === 'edit') {
+    arr.push(id);
+  }
   arr = arr.join('/');
   form.action = arr;
 }
@@ -40,17 +43,19 @@ const descriptionInput = document.querySelector('#description');
 const dateTimeInput = document.querySelector('#datetime');
 const dateTimeInputDiv = document.querySelector('.popup-card-remainder');
 
-const openPopupModal = () => {
+const openPopupModal = (e) => {
+  let id = e.target.id;
+
   switch (whichComponent) {
     case "todo":
       popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : 'Edit') + " Todo";
       dateTimeInputDiv.style.display = 'block';
-      setFormAction(whichComponent, whichAction);
+      setFormAction(whichComponent, whichAction, id);
       break;
     case "note":
       popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : 'Edit') + " Note";
       dateTimeInputDiv.style.display = 'none';
-      setFormAction(whichComponent, whichAction);
+      setFormAction(whichComponent, whichAction, id);
       break;
     default:
       popupFor.innerHTML = "Add";
