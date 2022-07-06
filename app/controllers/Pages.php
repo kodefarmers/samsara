@@ -1,9 +1,11 @@
 <?php
 require_once 'Todos.php';
+require_once 'Notes.php';
 
 class Pages extends Controller
 {
   private $todoControls = null;
+  private $noteControls = null;
 
   public function __construct()
   {
@@ -11,6 +13,7 @@ class Pages extends Controller
       redirect('users/login');
     }
     $this->todoControls = new Todos();
+    $this->noteControls = new Notes();
   }
 
   // need this for our defaults
@@ -18,9 +21,11 @@ class Pages extends Controller
   {
 
     $tasks = $this->todoControls->getTodos();
+    $notes = $this->noteControls->getNotes();
 
     $data = [
-      "tasks" => $tasks
+      "tasks" => $tasks,
+      "notes" => $notes
     ];
 
     $this->view('pages/index', $data);

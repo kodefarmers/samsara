@@ -11,7 +11,7 @@
       <span class="card-head-title">child1</span>
     </div>
     <div class="child1-content">
-      <div class="child1-content-item">
+      <div class="child-content-item">
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
       <span class="card-head-title">child2</span>
     </div>
     <div class="child2-content">
-      <div class="child2-content-item">
+      <div class="child-content-item">
       </div>
     </div>
   </div>
@@ -35,14 +35,14 @@
     </div>
     <div class="child3-content">
       <?php foreach ($data['tasks'] as $task) : ?>
-        <div class="child3-content-item">
-          <div class="child3-content-left">
+        <div class="child-content-item">
+          <div class="child-content-left">
             <input type="checkbox" onchange="updateTodoStatus(this)" data-checkbox-id="<?php echo $task->todoId ?>" <?php echo ($task->checked) ? "checked" : '' ?>>
           </div>
-          <div class="child3-content-middle">
+          <div class="child-content-middle">
             <span class="todo-task <?php echo ($task->checked) ? 'completed-task' : '' ?>" id="task-<?php echo $task->todoId ?>"> <?php echo $task->title ?> </span>
           </div>
-          <div class="child3-content-right">
+          <div class="child-content-right">
             <button class="edit btn btn-success">
               <i id="<?php echo $task->todoId ?>" class="uil uil-edit"></i>
             </button>
@@ -59,11 +59,34 @@
   <!-- Notes -->
   <div class="child contents-child4">
     <div class="child-head child4 card-head">
-      <span class="card-head-title">child4</span>
+      <span class="card-head-title">notes</span>
+      <button class="add btn btn-primary">
+        <i class="uil uil-plus-square"></i>
+      </button>
     </div>
     <div class="child4-content">
-      <div class="child4-content-item">
-      </div>
+      <?php foreach ($data['notes'] as $note) : ?>
+        <div class="child-content-item">
+          <div class="child-content-left">
+            <button class="btn btn-primary">
+              <i class="uil uil-eye"></i>
+            </button>
+          </div>
+          <div class="child-content-middle">
+            <span class="" id="note-<?php echo $note->noteId ?>"> <?php echo ($note->title) ? substr($note->title, 0, 30) . '...' : substr($note->description, 0, 30) . '...'; ?> </span>
+          </div>
+          <div class="child-content-right">
+            <button class="edit btn btn-success">
+              <i id="<?php echo $note->noteId ?>" class="uil uil-edit"></i>
+            </button>
+            <form action="<?php echo URLROOT; ?>/todos/delete/<?php echo $note->noteId ?>" method="POST">
+              <button class="btn btn-danger">
+                <i class="uil uil-trash-alt"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      <?php endforeach; ?>
     </div>
   </div>
   <!-- Hourly Weather -->
@@ -72,7 +95,7 @@
       <span class="card-head-title">child2</span>
     </div>
     <div class="child5-content">
-      <div class="child5-content-item">
+      <div class="child-content-item">
       </div>
     </div>
   </div>
