@@ -1,4 +1,34 @@
-const add = document.querySelector('.add');
+let whichComponent = ''; // If buttons on todo was clicked this will be set to todo
+let whichAction = ''; // If edit button was clicked this will be set to edit
+
+const setWhichAction = (e) => {
+  e.target.classList.forEach((i) => {
+    if (i.startsWith('add')) {
+      whichAction = 'insert';
+    } else if (i.startsWith('edit')) {
+      whichAction = 'edit';
+    }
+  });
+}
+
+const setWhichComponent = (e) => {
+  e.target.classList.forEach((i) => {
+    if (i.startsWith('add-')) {
+      whichComponent = i.slice(4);
+    } else if (i.startsWith('edit-')) {
+      whichComponent = i.slice(5);
+    }
+  });
+}
+
+const setFormAction = (component, method) => {
+  let arr = URLROOT.split('/');
+  arr.push(component + 's', method);
+  arr = arr.join('/');
+  form.action = arr;
+}
+
+const addButtons = document.querySelectorAll('.add');
 const popupModal = document.querySelector('.popup');
 const editButtons = document.querySelectorAll('.edit');
 
@@ -11,6 +41,20 @@ const dateTimeInput = document.querySelector('#datetime');
 const dateTimeInputDiv = document.querySelector('.popup-card-remainder');
 
 const openPopupModal = () => {
+  switch (whichComponent) {
+    case "todo":
+      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : 'Edit') + " Todo";
+      dateTimeInputDiv.style.display = 'block';
+      setFormAction(whichComponent, whichAction);
+      break;
+    case "note":
+      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : 'Edit') + " Note";
+      dateTimeInputDiv.style.display = 'none';
+      setFormAction(whichComponent, whichAction);
+      break;
+    default:
+      popupFor.innerHTML = "Add";
+  }
   popupModal.style.display = 'grid';
 }
 
@@ -18,16 +62,11 @@ const closePopupModal = (e) => {
   if (e.target.classList.contains('popup')) {
     popupModal.style.display = 'none';
 
-    let arr = URLROOT.split('/');
-    arr.push('todos', 'insert');
-    arr = arr.join('/');
-    form.action = arr;
-
     // RESET VALUES THAT WAS SET WHILE EDIT WAS CLICKED
     titleInput.value = '';
     descriptionInput.value = '';
     dateTimeInput.value = '';
-    popupFor.innerHTML = "Add Todo"
+    popupFor.innerHTML = "Add"
   }
 }
 
@@ -41,19 +80,13 @@ const fetchData = (e) => {
       let response = JSON.parse(this.responseText);
       titleInput.value = response.title;
       descriptionInput.value = response.description;
-      if (response.remainder !== null) {
+      if (response.remainder && response.remainder !== null) {
         dateTimeInput.value = response.remainder.replace(/\s/g, 'T');
       }
-      popupFor.innerHTML = "Edit Todo"
-
-      let arr = URLROOT.split('/');
-      arr.push('edit', id);
-      arr = arr.join('/');
-      form.action = arr;
     }
   }
 
-  xhr.open('GET', 'todos/get/' + id, false);
+  xhr.open('GET', whichComponent + 's/get/' + id, false);
   xhr.send();
 }
 
@@ -61,10 +94,16 @@ const fetchData = (e) => {
 
 popupModal.addEventListener('click', closePopupModal);
 
-add.addEventListener('click', openPopupModal);
+addButtons.forEach((btn) => {
+  btn.addEventListener('click', setWhichComponent)
+  btn.addEventListener('click', setWhichAction)
+  btn.addEventListener('click', openPopupModal);
+})
 
 editButtons.forEach((btn) => {
-  btn.addEventListener("click", openPopupModal)
+  btn.addEventListener('click', setWhichComponent)
+  btn.addEventListener('click', setWhichAction)
   btn.addEventListener("click", fetchData)
+  btn.addEventListener("click", openPopupModal)
 });
 

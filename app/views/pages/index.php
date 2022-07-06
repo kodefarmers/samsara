@@ -29,8 +29,8 @@
   <div class="child contents-child3">
     <div class="child-head child3 card-head">
       <span class="card-head-title">todo</span>
-      <button class="add btn btn-primary">
-        <i class="uil uil-plus-square"></i>
+      <button class="add add-todo btn btn-primary">
+        <i class="uil uil-plus-square add-todo"></i>
       </button>
     </div>
     <div class="child3-content">
@@ -43,8 +43,8 @@
             <span class="todo-task <?php echo ($task->checked) ? 'completed-task' : '' ?>" id="task-<?php echo $task->todoId ?>"> <?php echo $task->title ?> </span>
           </div>
           <div class="child-content-right">
-            <button class="edit btn btn-success">
-              <i id="<?php echo $task->todoId ?>" class="uil uil-edit"></i>
+            <button class="edit btn btn-success edit-todo">
+              <i id="<?php echo $task->todoId ?>" class="uil uil-edit edit-todo"></i>
             </button>
             <form action="<?php echo URLROOT; ?>/todos/delete/<?php echo $task->todoId ?>" method="POST">
               <button class="btn btn-danger">
@@ -60,8 +60,8 @@
   <div class="child contents-child4">
     <div class="child-head child4 card-head">
       <span class="card-head-title">notes</span>
-      <button class="add btn btn-primary">
-        <i class="uil uil-plus-square"></i>
+      <button class="add add-note btn btn-primary">
+        <i class="uil uil-plus-square add-note"></i>
       </button>
     </div>
     <div class="child4-content">
@@ -76,8 +76,8 @@
             <span class="" id="note-<?php echo $note->noteId ?>"> <?php echo ($note->title) ? substr($note->title, 0, 30) . '...' : substr($note->description, 0, 30) . '...'; ?> </span>
           </div>
           <div class="child-content-right">
-            <button class="edit btn btn-success">
-              <i id="<?php echo $note->noteId ?>" class="uil uil-edit"></i>
+            <button class="edit btn btn-success edit-note">
+              <i id="<?php echo $note->noteId ?>" class="uil uil-edit edit-note"></i>
             </button>
             <form action="<?php echo URLROOT; ?>/todos/delete/<?php echo $note->noteId ?>" method="POST">
               <button class="btn btn-danger">

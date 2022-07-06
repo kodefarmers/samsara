@@ -9,6 +9,16 @@ class Note
     $this->db = new Database;
   }
 
+  // Fetch Note
+  public function getSingleNote($id)
+  {
+    $this->db->query('SELECT * FROM notes where id = :id');
+    $this->db->bind(':id', $id);
+    $result = $this->db->getSingle();
+
+    return $result;
+  }
+
   // Fetch Notes
   public function getNotes()
   {

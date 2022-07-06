@@ -14,7 +14,14 @@ class Notes extends Controller
   public function getNotes()
   {
     // Get Notes
-    $tasks = $this->noteModel->getNotes();
-    return $tasks;
+    $notes = $this->noteModel->getNotes();
+    return $notes;
+  }
+
+  public function get($id)
+  {
+    $note = $this->noteModel->getSingleNote($id);
+
+    echo json_encode(json_decode(json_encode($note), true));
   }
 }
