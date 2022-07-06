@@ -32,4 +32,22 @@ class Note
     $results = $this->db->resultSet();
     return $results;
   }
+
+  // Insert Note
+  public function insert($data)
+  {
+    $this->db->query('INSERT INTO notes (user_id, title, description) VALUES (:userid, :title, :description)');
+
+    // Bind values
+    $this->db->bind(':userid', $_SESSION['user_id']);
+    $this->db->bind(':title', $data['title']);
+    $this->db->bind(':description', $data['description']);
+
+    // Execute (INSERT, UPDATE, DELETE)
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
