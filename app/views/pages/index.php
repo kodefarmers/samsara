@@ -3,7 +3,7 @@
 <?php require APPROOT . '/views/includes/mainh.php'; ?>
 
 <!-- Flash Message Div -->
-<?php flash('todo_message') ?>
+<?php flash('message') ?>
 <div class="contents">
   <!-- Clock -->
   <div class="child contents-child1">

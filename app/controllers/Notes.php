@@ -42,16 +42,16 @@ class Notes extends Controller
 
       // Validate Inputs
 
-      // Validate Title
+      // Validate Descripton
       if (empty($data['description'])) {
         $data['description_error'] = 'Note cannot be empty';
       }
 
       if (empty($data['description_error'])) {
         // Validated
-        // Insert Todo
+        // Insert Note
         if ($this->noteModel->insert($data)) {
-          flash('note_add_success', 'Note Added Successfully');
+          flash('message', 'Note Added Successfully');
           redirect(''); // Helper function
         } else {
           die('Something went wrong');
@@ -59,7 +59,7 @@ class Notes extends Controller
       } else {
         // Load view with error
         redirect(''); // Helper function
-        flash('note_add_error', 'Note cannot be empty', 'message-alert');
+        flash('message', 'Note cannot be empty', 'message-alert');
       }
     } else {
       // Init Data
@@ -91,16 +91,15 @@ class Notes extends Controller
 
       // Validate Inputs
 
-      // Validate Title
       if (empty($data['description'])) {
         $data['description_error'] = 'Note cannot be empty';
       }
 
       if (empty($data['description_error'])) {
         // Validated
-        // Insert Todo
+        // Insert Note
         if ($this->noteModel->edit($id, $data)) {
-          flash('note_message', 'Note Edited Successfully');
+          flash('message', 'Note Edited Successfully');
           redirect(''); // Helper function
         } else {
           die('Something went wrong');
@@ -108,7 +107,7 @@ class Notes extends Controller
       } else {
         // Load view with error
         redirect(''); // Helper function
-        flash('note_add_error', 'Note cannot be empty', 'message-alert');
+        flash('message', 'Note cannot be empty', 'message-alert');
       }
     } else {
       // Init Data
@@ -120,6 +119,18 @@ class Notes extends Controller
 
       // Load view
       $this->view('', $data);
+    }
+  }
+
+  public function delete($id)
+  {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if ($this->noteModel->delete($id)) {
+        flash('message', 'Note removed');
+        redirect('');
+      }
+    } else {
+      redirect('');
     }
   }
 }

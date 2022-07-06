@@ -52,7 +52,7 @@ class Todos extends Controller
         // Validated
         // Insert Todo
         if ($this->todoModel->insert($data)) {
-          flash('todo_add_success', 'Todo Added Successfully');
+          flash('message', 'Todo Added Successfully');
           redirect(''); // Helper function
         } else {
           die('Something went wrong');
@@ -60,7 +60,7 @@ class Todos extends Controller
       } else {
         // Load view with error
         redirect(''); // Helper function
-        flash('todo_add_error', 'Todo title cannot be empty', 'message-alert');
+        flash('error', 'Todo title cannot be empty', 'message-alert');
       }
     } else {
       // Init Data
@@ -103,7 +103,7 @@ class Todos extends Controller
         // Validated
         // Insert Todo
         if ($this->todoModel->edit($id, $data)) {
-          flash('todo_message', 'Todo Edited Successfully');
+          flash('message', 'Todo Edited Successfully');
           redirect(''); // Helper function
         } else {
           die('Something went wrong');
@@ -111,7 +111,7 @@ class Todos extends Controller
       } else {
         // Load view with error
         redirect(''); // Helper function
-        flash('todo_add_error', 'Todo title cannot be empty', 'message-alert');
+        flash('message', 'Todo title cannot be empty', 'message-alert');
       }
     } else {
       // Init Data
@@ -139,7 +139,7 @@ class Todos extends Controller
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if ($this->todoModel->check($id)) {
-        flash('todo_message', 'Todo task checked');
+        flash('message', 'Todo task checked');
         redirect('');
       }
     } else {
@@ -151,7 +151,7 @@ class Todos extends Controller
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if ($this->todoModel->delete($id)) {
-        flash('todo_message', 'Todo task removed');
+        flash('message', 'Todo task removed');
         redirect('');
       }
     } else {
