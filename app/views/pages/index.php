@@ -116,16 +116,6 @@
       <?php endforeach; ?>
     </div>
   </div>
-  <!-- Hourly Weather -->
-  <div class="child contents-child5">
-    <div class="child-head child5 card-head">
-      <span class="card-head-title">child2</span>
-    </div>
-    <div class="child5-content">
-      <div class="child-content-item">
-      </div>
-    </div>
-  </div>
 </div>
 
 <?php require APPROOT . '/views/includes/mainf.php'; ?>
