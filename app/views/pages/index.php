@@ -29,7 +29,7 @@
     <div class="child2-content">
       <div class="child2-content-item">
         <div class="child2-content-left">
-          <input type="text" name="city" id="" placeholder="Enter city.." />
+          <input type="text" name="city" id="city" placeholder="Enter city.." />
           <button class="btn btn-primary" type="submit"><i class="uil uil-search"></i></button>
         </div>
         <div class="child2-content-middle">
