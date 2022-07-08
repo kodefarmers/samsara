@@ -24,10 +24,30 @@
   <!-- Weather -->
   <div class="child contents-child2">
     <div class="child-head child2 card-head">
-      <span class="card-head-title">child2</span>
+      <span class="card-head-title">weather</span>
     </div>
     <div class="child2-content">
-      <div class="child-content-item">
+      <div class="child2-content-item">
+        <div class="child2-content-left">
+          <input type="text" name="city" id="" placeholder="Enter city.." />
+        </div>
+        <div class="child2-content-middle">
+          <img src="<?php echo URLROOT; ?>/img/weather-icons/cloud.svg" alt="" srcset="" class="weather-icon">
+        </div>
+        <div class="child2-content-right">
+          <div class="child2-percipitation">
+            <pre>percp: </pre>
+            <span>69%</span>
+          </div>
+          <div class="child2-temperature">
+            <pre>temp: </pre>
+            <span>27&#176;C</span>
+          </div>
+          <div class="child2-humidity">
+            <pre>humi: </pre>
+            <span>69%</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
