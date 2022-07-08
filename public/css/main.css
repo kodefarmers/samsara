@@ -63,7 +63,7 @@ main {
 
 .contents {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   row-gap: 10px;
   column-gap: 10px;
 }
@@ -89,9 +89,9 @@ main {
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
-.contents-child2 {
-  grid-column: span 2; /* For a grid that needs to take 2 columns */
-}
+/* .contents-child2 {
+  grid-column: span 2; // For a grid that needs to take 2 columns
+} */
 
 .child-content-item {
   display: flex;
