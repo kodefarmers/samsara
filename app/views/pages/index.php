@@ -8,10 +8,16 @@
   <!-- Clock -->
   <div class="child contents-child1">
     <div class="child-head child1 card-head">
-      <span class="card-head-title">child1</span>
+      <span class="card-head-title">clock</span>
     </div>
     <div class="child1-content">
       <div class="child-content-item">
+        <div class="clock">
+          <h2 class="clock-h2"></h2>
+        </div>
+        <div class="date">
+          <p class="date-p"></p>
+        </div>        
       </div>
     </div>
   </div>
