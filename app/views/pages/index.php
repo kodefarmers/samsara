@@ -11,7 +11,7 @@
       <span class="card-head-title">clock</span>
     </div>
     <div class="child1-content">
-      <div class="child-content-item">
+      <div class="child1-content-item">
         <div class="clock">
           <h2 class="clock-h2"></h2>
         </div>
