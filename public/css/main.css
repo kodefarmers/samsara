@@ -129,6 +129,45 @@ main {
   text-decoration: line-through;
 }
 
+/* WEATHER COMPONENT */
+.child2-content-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  background-color: var(--color-white);
+}
+
+.child2-content-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.child2-content-right i{
+  font-size: 1.6rem;
+}
+
+.child2-content-item input[type="text"] {
+  background: var(--color-light);
+  border-radius: var(--border-radius);
+  padding: 0.7rem;
+  font-size: 0.8rem;
+  color: var(--color-dark);
+  max-width: 9rem;
+}
+
+.weather-icon {
+  width: 4.7rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.child2-percipitation, .child2-temperature, .child2-humidity {
+ display: flex;
+ align-items: center;
+}
+
+
 /* MEDIA QUERIES FOR LAPTOPS AND PCS */
 @media screen and (max-width: 1200px){
   .main__container {
