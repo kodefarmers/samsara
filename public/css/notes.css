@@ -1,0 +1,38 @@
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.note {
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: 1rem;
+}
+
+.note-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-title span {
+  color: var(--color-faded);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.note-description {
+  margin: 0 0 0.5rem 0;
+}
+
+.note-options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.note h4 {
+  margin-bottom: 0.3rem;
+}
