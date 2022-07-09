@@ -49,3 +49,11 @@
 .popup-card-options i{
   font-size: 1.4rem;
 }
+
+#card-delete {
+  display: none;
+}
+
+.btn-delete, .btn-cancel {
+  margin: 1rem 0 0 0;
+}

@@ -9,6 +9,8 @@ const setWhichAction = (e) => {
       whichAction = 'edit';
     } else if (i.startsWith('view')) {
       whichAction = 'view';
+    } else if (i.startsWith('delete')) {
+      whichAction = 'delete';
     }
   });
 }
@@ -19,6 +21,8 @@ const setWhichComponent = (e) => {
       whichComponent = i.slice(4);
     } else if (i.startsWith('edit-') || i.startsWith('view-')) {
       whichComponent = i.slice(5);
+    } else if (i.startsWith('delete-')) {
+      whichComponent = i.slice(7);
     }
   });
 }
@@ -26,7 +30,7 @@ const setWhichComponent = (e) => {
 const setFormAction = (component, method, id = '') => {
   let arr = URLROOT.split('/');
   arr.push(component + 's', method);
-  if (method === 'edit') {
+  if (method === 'edit' || method === 'delete') {
     arr.push(id);
   }
   arr = arr.join('/');
@@ -37,8 +41,11 @@ const addButtons = document.querySelectorAll('.add');
 const viewButtons = document.querySelectorAll('.view');
 const popupModal = document.querySelector('.popup');
 const editButtons = document.querySelectorAll('.edit');
+const deleteIconButtons = document.querySelectorAll('.delete');
 
 // Form Elements
+const insertDiv = document.querySelector('#card-insert');
+const deleteDiv = document.querySelector('#card-delete');
 const form = document.querySelector('#popup-form');
 const popupFor = document.querySelector('#popup-card-heading');
 const titleInput = document.querySelector('#title');
@@ -46,15 +53,16 @@ const descriptionInput = document.querySelector('#description');
 const dateTimeInput = document.querySelector('#datetime');
 const dateTimeInputDiv = document.querySelector('.popup-card-remainder');
 const saveBtn = document.querySelector('#btn-save');
+const cancelBtn = document.querySelectorAll('.btn-cancel');
+const deleteBtn = document.querySelectorAll('.btn-delete');
 
 const openPopupModal = (e) => {
   let id = e.target.id;
 
   switch (whichComponent) {
     case "todo":
-      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : 'View') + " Todo";
+      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : (whichAction == 'delete') ? 'Delete' : 'View') + " Todo";
       dateTimeInputDiv.style.display = 'block';
-      setFormAction(whichComponent, whichAction, id);
 
       if (whichAction == 'view') {
         titleInput.disabled = true;
@@ -63,11 +71,16 @@ const openPopupModal = (e) => {
         saveBtn.style.display = 'none';
       }
 
+      if (whichAction == 'delete') {
+        insertDiv.style.display = 'none';
+        deleteDiv.style.display = 'inline-block';
+      }
+
+      setFormAction(whichComponent, whichAction, id);
       break;
     case "note":
-      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : 'View') + " Note";
+      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : (whichAction == 'delete') ? 'Delete' : 'View') + " Note";
       dateTimeInputDiv.style.display = 'none';
-      setFormAction(whichComponent, whichAction, id);
 
       if (whichAction == 'view') {
         titleInput.disabled = true;
@@ -75,6 +88,12 @@ const openPopupModal = (e) => {
         saveBtn.style.display = 'none';
       }
 
+      if (whichAction == 'delete') {
+        insertDiv.style.display = 'none';
+        deleteDiv.style.display = 'inline-block';
+      }
+
+      setFormAction(whichComponent, whichAction, id);
       break;
     default:
       popupFor.innerHTML = "Add";
@@ -96,6 +115,9 @@ const closePopupModal = (e) => {
     descriptionInput.disabled = false;
     dateTimeInput.disabled = false;
     saveBtn.style.display = 'inline-block';
+
+    insertDiv.style.display = 'block';
+    deleteDiv.style.display = 'none';
   }
 }
 
@@ -141,3 +163,8 @@ viewButtons.forEach((btn) => {
   btn.addEventListener('click', openPopupModal)
 });
 
+deleteIconButtons.forEach((btn) => {
+  btn.addEventListener('click', setWhichComponent)
+  btn.addEventListener('click', setWhichAction)
+  btn.addEventListener('click', openPopupModal)
+});

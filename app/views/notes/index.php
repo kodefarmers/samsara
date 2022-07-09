@@ -22,10 +22,9 @@
         <button class="edit btn btn-success edit-note">
           <i id="<?php echo $note->noteId ?>" class="uil uil-edit edit-note"></i>
         </button>
-        <form action="<?php echo URLROOT; ?>/notes/delete/<?php echo $note->noteId ?>" method="POST">
-          <button class="btn btn-danger">
-            <i class="uil uil-trash-alt"></i>
-          </button>
+        <button class="btn btn-danger delete delete-note">
+          <i id="<?php echo $note->noteId ?>" class="uil uil-trash-alt delete-note"></i>
+        </button>
         </form>
       </div>
     </div>

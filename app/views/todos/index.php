@@ -28,11 +28,9 @@
             <button class="edit edit-todo btn btn-success">
               <i id="<?php echo $task->todoId ?>" class="uil uil-edit edit-todo"></i>
             </button>
-            <form action="<?php echo URLROOT; ?>/todos/delete/<?php echo $task->todoId ?>" method="POST">
-              <button class="btn btn-danger">
-                <i class="uil uil-trash-alt"></i>
-              </button>
-            </form>
+            <button class="btn btn-danger delete delete-todo">
+              <i id="<?php echo $task->todoId ?>" class="uil uil-trash-alt delete-todo"></i>
+            </button>
           </div>
         </td>
       </tr>
