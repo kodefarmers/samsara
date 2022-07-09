@@ -45,7 +45,7 @@ let weather = {
       ss_seconds = `0${ss_seconds}`;
     }
 
-    document.querySelector(".weather-icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+    document.querySelector(".weather-icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector("#span-weather").innerText = description;
     document.querySelector("#span-temperature").innerText = temp + "°C";
     document.querySelector("#span-humidity").innerText = humidity + "%";
