@@ -103,8 +103,8 @@
       <?php foreach ($data['notes'] as $note) : ?>
         <div class="child-content-item">
           <div class="child-content-left">
-            <button class="btn btn-primary">
-              <i class="uil uil-eye"></i>
+            <button class="btn btn-primary view-note">
+              <i id="<?php echo $note->noteId ?>" class="uil uil-eye view-note"></i>
             </button>
           </div>
           <div class="child-content-middle">
