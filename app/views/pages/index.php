@@ -17,7 +17,7 @@
         </div>
         <div class="date">
           <p class="date-p"></p>
-        </div>        
+        </div>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
     <div class="child2-content">
       <div class="child2-content-item">
         <div class="child2-content-left">
-          <input type="text" name="city" id="city" placeholder="Enter city.." class="city"/>
+          <input type="text" name="city" id="city" placeholder="Enter city.." class="city" />
           <button class="btn btn-primary btn-search" type="submit"><i class="uil uil-search"></i></button>
         </div>
         <div class="child2-content-middle">
@@ -103,7 +103,7 @@
       <?php foreach ($data['notes'] as $note) : ?>
         <div class="child-content-item">
           <div class="child-content-left">
-            <button class="btn btn-primary view-note">
+            <button class="btn btn-primary view view-note">
               <i id="<?php echo $note->noteId ?>" class="uil uil-eye view-note"></i>
             </button>
           </div>

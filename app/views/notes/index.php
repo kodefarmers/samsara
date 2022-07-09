@@ -15,7 +15,7 @@
         </p>
       </div>
       <div class="note-options">
-        <button class="btn btn-primary view-note">
+        <button class="btn btn-primary view view-note">
           <i id="<?php echo $note->noteId ?>" class="uil uil-eye view-note"></i>
         </button>
         </button>

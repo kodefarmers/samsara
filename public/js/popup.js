@@ -7,6 +7,8 @@ const setWhichAction = (e) => {
       whichAction = 'insert';
     } else if (i.startsWith('edit')) {
       whichAction = 'edit';
+    } else if (i.startsWith('view')) {
+      whichAction = 'view';
     }
   });
 }
@@ -15,7 +17,7 @@ const setWhichComponent = (e) => {
   e.target.classList.forEach((i) => {
     if (i.startsWith('add-')) {
       whichComponent = i.slice(4);
-    } else if (i.startsWith('edit-')) {
+    } else if (i.startsWith('edit-') || i.startsWith('view-')) {
       whichComponent = i.slice(5);
     }
   });
@@ -32,6 +34,7 @@ const setFormAction = (component, method, id = '') => {
 }
 
 const addButtons = document.querySelectorAll('.add');
+const viewButtons = document.querySelectorAll('.view');
 const popupModal = document.querySelector('.popup');
 const editButtons = document.querySelectorAll('.edit');
 
@@ -42,6 +45,7 @@ const titleInput = document.querySelector('#title');
 const descriptionInput = document.querySelector('#description');
 const dateTimeInput = document.querySelector('#datetime');
 const dateTimeInputDiv = document.querySelector('.popup-card-remainder');
+const saveBtn = document.querySelector('#btn-save');
 
 const openPopupModal = (e) => {
   let id = e.target.id;
@@ -53,9 +57,20 @@ const openPopupModal = (e) => {
       setFormAction(whichComponent, whichAction, id);
       break;
     case "note":
-      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : 'Edit') + " Note";
+      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : 'View') + " Note";
       dateTimeInputDiv.style.display = 'none';
       setFormAction(whichComponent, whichAction, id);
+
+      if (whichAction == 'view') {
+        titleInput.disabled = true;
+        descriptionInput.disabled = true;
+        saveBtn.style.display = 'none';
+      } else {
+        titleInput.disabled = false;
+        descriptionInput.disabled = false;
+        saveBtn.style.display = 'inline-block';
+      }
+
       break;
     default:
       popupFor.innerHTML = "Add";
@@ -95,20 +110,25 @@ const fetchData = (e) => {
   xhr.send();
 }
 
-
-
 popupModal.addEventListener('click', closePopupModal);
 
 addButtons.forEach((btn) => {
   btn.addEventListener('click', setWhichComponent)
   btn.addEventListener('click', setWhichAction)
   btn.addEventListener('click', openPopupModal);
-})
+});
 
 editButtons.forEach((btn) => {
   btn.addEventListener('click', setWhichComponent)
   btn.addEventListener('click', setWhichAction)
   btn.addEventListener("click", fetchData)
   btn.addEventListener("click", openPopupModal)
+});
+
+viewButtons.forEach((btn) => {
+  btn.addEventListener('click', setWhichComponent)
+  btn.addEventListener('click', setWhichAction)
+  btn.addEventListener("click", fetchData)
+  btn.addEventListener('click', openPopupModal)
 });
 
