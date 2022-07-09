@@ -101,7 +101,6 @@ main {
   background-color: var(--color-white);
 }
 
-
 .child1-content-item {
   display: flex;
   flex-direction: column;
@@ -162,11 +161,10 @@ main {
   overflow: hidden;
 }
 
-.child2-percipitation, .child2-temperature, .child2-humidity {
+.child2-weather, .child2-temperature, .child2-humidity, .child2-sunrise, .child2-sunset {
  display: flex;
  align-items: center;
 }
-
 
 /* MEDIA QUERIES FOR LAPTOPS AND PCS */
 @media screen and (max-width: 1200px){
