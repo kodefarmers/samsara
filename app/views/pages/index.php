@@ -30,7 +30,7 @@
       <div class="child2-content-item">
         <div class="child2-content-left">
           <input type="text" name="city" id="city" placeholder="Enter city.." class="city"/>
-          <button class="btn btn-primary btn-primary" type="submit"><i class="uil uil-search"></i></button>
+          <button class="btn btn-primary btn-search" type="submit"><i class="uil uil-search"></i></button>
         </div>
         <div class="child2-content-middle">
           <img src="<?php echo URLROOT; ?>/img/weather-icons/cloud.svg" alt="" srcset="" class="weather-icon">
