@@ -6,7 +6,7 @@ const digitalClock = () => {
   const dateObj = new Date();
   let hours = dateObj.getHours();
   let minutes = dateObj.getMinutes();
-  let secondes = dateObj.getSeconds();
+  let seconds = dateObj.getSeconds();
 
   //Adding a zero to the left of the time if it's less or equal to 9.
   if (+hours <= 9) {
@@ -15,11 +15,11 @@ const digitalClock = () => {
   if (+minutes <= 9) {
     minutes = `0${minutes}`;
   }
-  if (+secondes <= 9) {
-    secondes = `0${secondes}`;
+  if (+seconds <= 9) {
+    seconds = `0${seconds}`;
   }
 
-  h2.innerHTML = `${hours}:${minutes}:${secondes}`;
+  h2.innerHTML = `${hours}:${minutes}:${seconds}`;
 }
 
 setInterval(digitalClock, 1000);
