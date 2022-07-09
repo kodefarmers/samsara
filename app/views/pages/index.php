@@ -36,17 +36,25 @@
           <img src="<?php echo URLROOT; ?>/img/weather-icons/cloud.svg" alt="" srcset="" class="weather-icon">
         </div>
         <div class="child2-content-right">
-          <div class="child2-percipitation">
-            <pre>percp: </pre>
-            <span>69%</span>
+          <div class="child2-weather">
+            <pre>weather: </pre>
+            <span id="span-weather"></span>
           </div>
           <div class="child2-temperature">
             <pre>temp: </pre>
-            <span>27&#176;C</span>
+            <span id="span-temperature"></span>
           </div>
           <div class="child2-humidity">
             <pre>humi: </pre>
-            <span>69%</span>
+            <span id="span-humidity"></span>
+          </div>
+          <div class="child2-sunrise">
+            <pre>sunrise: </pre>
+            <span id="span-sunrise"></span>
+          </div>
+          <div class="child2-sunset">
+            <pre>sunset: </pre>
+            <span id="span-sunset"></span>
           </div>
         </div>
       </div>
