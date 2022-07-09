@@ -156,7 +156,7 @@ main {
 }
 
 .weather-icon {
-  width: 4.7rem;
+  width: 7rem;
   aspect-ratio: 1/1;
   overflow: hidden;
 }
