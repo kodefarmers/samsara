@@ -52,9 +52,17 @@ const openPopupModal = (e) => {
 
   switch (whichComponent) {
     case "todo":
-      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : 'Edit') + " Todo";
+      popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : 'View') + " Todo";
       dateTimeInputDiv.style.display = 'block';
       setFormAction(whichComponent, whichAction, id);
+
+      if (whichAction == 'view') {
+        titleInput.disabled = true;
+        descriptionInput.disabled = true;
+        dateTimeInput.disabled = true;
+        saveBtn.style.display = 'none';
+      }
+
       break;
     case "note":
       popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : 'View') + " Note";
@@ -65,10 +73,6 @@ const openPopupModal = (e) => {
         titleInput.disabled = true;
         descriptionInput.disabled = true;
         saveBtn.style.display = 'none';
-      } else {
-        titleInput.disabled = false;
-        descriptionInput.disabled = false;
-        saveBtn.style.display = 'inline-block';
       }
 
       break;
@@ -87,6 +91,11 @@ const closePopupModal = (e) => {
     descriptionInput.value = '';
     dateTimeInput.value = '';
     popupFor.innerHTML = "Add"
+
+    titleInput.disabled = false;
+    descriptionInput.disabled = false;
+    dateTimeInput.disabled = false;
+    saveBtn.style.display = 'inline-block';
   }
 }
 

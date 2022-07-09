@@ -128,5 +128,4 @@
 
 <?php require APPROOT . '/views/includes/mainf.php'; ?>
 <?php require APPROOT . '/views/includes/popup-modal.php'; ?>
-
 <?php require APPROOT . '/views/includes/footer.php'; ?>

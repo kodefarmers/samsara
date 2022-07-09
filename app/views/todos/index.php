@@ -22,11 +22,11 @@
         <td><?php echo ($task->checked) ? 'Completed' : 'Not Completed' ?></td>
         <td>
           <div class="table-options">
-            <button class="btn btn-primary">
-              <i class="uil uil-eye"></i>
+            <button class="btn btn-primary view view-todo">
+              <i id="<?php echo $task->todoId ?>" class="uil uil-eye view-todo"></i>
             </button>
-            <button class="edit btn btn-success">
-              <i id="<?php echo $task->todoId ?>" class="uil uil-edit"></i>
+            <button class="edit edit-todo btn btn-success">
+              <i id="<?php echo $task->todoId ?>" class="uil uil-edit edit-todo"></i>
             </button>
             <form action="<?php echo URLROOT; ?>/todos/delete/<?php echo $task->todoId ?>" method="POST">
               <button class="btn btn-danger">
