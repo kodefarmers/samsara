@@ -13,10 +13,10 @@
     <div class="child1-content">
       <div class="child1-content-item">
         <div class="clock">
-          <h2 class="clock-h2"></h2>
+          <pre class="clock-h2"></pre>
         </div>
         <div class="date">
-          <p class="date-p"></p>
+          <pre class="date-p"></pre>
         </div>
       </div>
     </div>
@@ -29,8 +29,11 @@
     <div class="child2-content">
       <div class="child2-content-item">
         <div class="child2-content-left">
-          <input type="text" name="city" id="city" placeholder="Enter city.." class="city" />
-          <button class="btn btn-primary btn-search" type="submit"><i class="uil uil-search"></i></button>
+          <div>
+            <input type="text" name="city" id="city" placeholder="Enter city.." class="city" />
+            <button class="btn btn-primary btn-search" type="submit"><i class="uil uil-search"></i></button>
+          </div>
+          <pre id="weatherInfoStatus"></pre>
         </div>
         <div class="child2-content-middle">
           <img src="<?php echo URLROOT; ?>/img/weather-icons/cloud.svg" alt="" srcset="" class="weather-icon">

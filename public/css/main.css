@@ -79,7 +79,7 @@ main {
 .child {
   background-color: var(--color-white);
   border-radius: var(--card-border-radius);
-  height: max-content;
+  /* height: max-content; */
 }
 
 .child-head {
@@ -101,13 +101,19 @@ main {
   background-color: var(--color-white);
 }
 
+.child1-content {
+  height: 77%;
+}
+
 .child1-content-item {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 0.3rem 0.6rem 0.3rem 0.6rem;
   background-color: var(--color-white);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .clock {
@@ -115,7 +121,7 @@ main {
 }
 
 .date {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .child-content-right {
@@ -153,6 +159,16 @@ main {
   font-size: 0.8rem;
   color: var(--color-dark);
   max-width: 9rem;
+}
+
+.child2-content-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.child2-content-left pre {
+  margin-top: 0.4rem;
 }
 
 .weather-icon {
