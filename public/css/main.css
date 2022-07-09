@@ -36,7 +36,7 @@ main {
   background: var(--color-light);
 }
 
-.sidebar-menuitem i {
+.sidebar-menuitem-icon {
   font-size: 1.4rem;
   color: var(--color-gray);
   margin: 0 0 0 1rem;
@@ -53,6 +53,50 @@ main {
 
 .sidebar .active i, .sidebar .active h3{
   color: var(--color-primary);
+}
+
+.timer-popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 110%;
+  width: 16rem;
+  background: var(--color-light);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+}
+
+.timer-popup::before {
+  content: '';
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  background: var(--color-light);
+  position: absolute;
+  top: 20%;
+  left: -0.6rem;
+  transform: rotate(45deg);
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer h4 {
+  font-size: 2.4rem;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+.timer-controls i {
+  color: var(--color-dark);
+  font-size: 1.3rem;
 }
 
 .main-container-right {
@@ -181,6 +225,7 @@ main {
  display: flex;
  align-items: center;
 }
+
 
 /* MEDIA QUERIES FOR LAPTOPS AND PCS */
 @media screen and (max-width: 1200px){
