@@ -14,7 +14,7 @@ let weather = {
     const {icon, description} = data.weather[0];
     const {temp, humidity} = data.main;
     const {sunrise, sunset} = data.sys;
-        let sr = new Date(sunrise * 1000);
+    let sr = new Date(sunrise * 1000);
     let ss = new Date(sunset * 1000);
 
     let sr_hours = sr.getHours();
@@ -57,14 +57,18 @@ let weather = {
   }
 };
 
-document.querySelector('.btn-search')
-  .addEventListener('click', function () {
+const searchBtn = document.querySelector('.btn-search');
+if (searchBtn !== null) {
+  searchBtn.addEventListener('click', function () {
     weather.search();
   })
+}
 
-document.querySelector('.city')
-  .addEventListener('keyup', function (e) {
+const cityInput = document.querySelector('.city');
+if (cityInput !== null) {
+  cityInput.addEventListener('keyup', function (e) {
     if (e.key == "Enter") {
       weather.search()
     }
   })
+}
