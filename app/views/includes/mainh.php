@@ -12,7 +12,7 @@
         <a href="<?php echo URLROOT ?>/todos" class="sidebar-menuitem<?php echo (CURPAGE == 'todos') ? ' active' : NULL ?>">
           <span> <i class="uil uil-clipboard-notes"></i> </span>
         </a>
-        <a class="sidebar-menuitem">
+        <a href="<?php echo URLROOT ?>/notes" class="sidebar-menuitem<?php echo (CURPAGE == 'notes') ? ' active' : NULL ?>">
           <span> <i class="uil uil-diary"></i> </span>
         </a>
       </div>

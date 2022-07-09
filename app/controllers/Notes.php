@@ -9,6 +9,12 @@ class Notes extends Controller
 
   public function index()
   {
+    $notes = $this->noteModel->getNotes();
+    $data = [
+      'notes' => $notes
+    ];
+
+    $this->view('notes/index', $data);
   }
 
   public function getNotes()
