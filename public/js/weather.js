@@ -18,8 +18,8 @@ let weather = {
     document.querySelector("#span-weather").innerText = description;
     document.querySelector("#span-temperature").innerText = temp + "°C";
     document.querySelector("#span-humidity").innerText = humidity + "%";
-    document.querySelector("#span-sunrise").innerText = sunrise;
-    document.querySelector("#span-sunset").innerText = sunset;
+    document.querySelector("#span-sunrise").innerText = new Date(sunrise*1000);
+    document.querySelector("#span-sunset").innerText = new Date(sunset*1000);
   },
   search: function () {
     this.fetchWeather(document.querySelector('.city').value);
