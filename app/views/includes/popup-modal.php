@@ -32,14 +32,14 @@
           <input type="number" name="sec" max="60" min="0" id="s" value="0">
         </div>
         <div class="timer-controls">
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" id="pause">
             <i class="uil uil-pause"></i>
           </button>
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" id="play">
             <i class="uil uil-play"></i>
           </button>
-          <button class="btn btn-primary">
-            <i class="uil uil-repeat"></i>
+          <button class="btn btn-primary" id="reset">
+            <i class="uil uil-stop-circle"></i>
           </button>
         </div>
       </div>

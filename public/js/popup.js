@@ -67,6 +67,7 @@ const openPopupModal = (e) => {
     case "todo":
       popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : (whichAction == 'delete') ? 'Delete' : 'View') + " Todo";
       dateTimeInputDiv.style.display = 'block';
+      timerDiv.style.display = 'none';
 
       if (whichAction == 'view') {
         titleInput.disabled = true;
@@ -85,6 +86,7 @@ const openPopupModal = (e) => {
     case "note":
       popupFor.innerHTML = ((whichAction == 'insert') ? 'Add' : (whichAction == 'edit') ? 'Edit' : (whichAction == 'delete') ? 'Delete' : 'View') + " Note";
       dateTimeInputDiv.style.display = 'none';
+      timerDiv.style.display = 'none';
 
       if (whichAction == 'view') {
         titleInput.disabled = true;
