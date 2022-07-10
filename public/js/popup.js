@@ -102,6 +102,7 @@ const openPopupModal = (e) => {
     case "timer":
       form.style.display = 'none';
       timerDiv.style.display = 'block';
+      openTimer.classList.add('active');
       break;
     default:
       popupFor.innerHTML = "Add";
@@ -129,7 +130,7 @@ const closePopupModal = (e) => {
 
     form.style.display = 'block';
     timerDiv.style.display = 'none';
-
+    openTimer.classList.remove('active');
   }
 }
 

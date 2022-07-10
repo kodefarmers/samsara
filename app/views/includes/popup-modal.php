@@ -27,9 +27,9 @@
       <div class="timer">
         <pre style="margin-bottom: 0.9rem;">Timer</pre>
         <div class="timer-input">
-          <input type="number" name="hour" max="99" min="0" id="h" value="0">:
-          <input type="number" name="min" max="60" min="0" id="m" value="0">:
-          <input type="number" name="sec" max="60" min="0" id="s" value="0">
+          <input type="number" name="hour" max="99" min="0" id="h">:
+          <input type="number" name="min" max="60" min="0" id="m">:
+          <input type="number" name="sec" max="60" min="0" id="s">
         </div>
         <div class="timer-controls">
           <button class="btn btn-primary" id="pause">
