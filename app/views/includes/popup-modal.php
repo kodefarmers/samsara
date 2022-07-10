@@ -25,12 +25,22 @@
     </form>
     <div class="timer-popup">
       <div class="timer">
-        <pre>Timer</pre>
-        <h4>09:10:11</h4>
+        <pre style="margin-bottom: 0.9rem;">Timer</pre>
+        <div class="timer-input">
+          <input type="number" name="hour" max="99" min="0" id="h" value="0">:
+          <input type="number" name="min" max="60" min="0" id="m" value="0">:
+          <input type="number" name="sec" max="60" min="0" id="s" value="0">
+        </div>
         <div class="timer-controls">
-          <i class="uil uil-pause"></i>
-          <i class="uil uil-play"></i>
-          <i class="uil uil-repeat"></i>
+          <button class="btn btn-primary">
+            <i class="uil uil-pause"></i>
+          </button>
+          <button class="btn btn-primary">
+            <i class="uil uil-play"></i>
+          </button>
+          <button class="btn btn-primary">
+            <i class="uil uil-repeat"></i>
+          </button>
         </div>
       </div>
     </div>

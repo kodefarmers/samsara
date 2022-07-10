@@ -55,6 +55,26 @@ main {
   color: var(--color-primary);
 }
 
+.timer-input {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.timer-input input[type='number'] {
+  border: none;
+  font-size: 2rem;
+  width: 5rem;
+  background: var(--color-light);
+  padding: 0.6rem;
+  border-radius: var(--border-radius);
+}
+
+.timer-input input[type=number]::-webkit-inner-spin-button, 
+.timer-input input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
 
 .timer {
   display: flex;
@@ -73,8 +93,8 @@ main {
 }
 
 .timer-controls i {
-  color: var(--color-dark);
-  font-size: 1.3rem;
+  color: var(--color-white);
+  font-size: 1rem;
 }
 
 .main-container-right {
