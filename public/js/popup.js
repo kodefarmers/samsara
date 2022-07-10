@@ -23,6 +23,8 @@ const setWhichComponent = (e) => {
       whichComponent = i.slice(5);
     } else if (i.startsWith('delete-')) {
       whichComponent = i.slice(7);
+    } else if (i.startsWith('open-')) {
+      whichComponent = i.slice(5);
     }
   });
 }
@@ -42,6 +44,8 @@ const viewButtons = document.querySelectorAll('.view');
 const popupModal = document.querySelector('.popup');
 const editButtons = document.querySelectorAll('.edit');
 const deleteIconButtons = document.querySelectorAll('.delete');
+const openTimer = document.querySelector('.open-timer');
+const timerDiv = document.querySelector('.timer-popup');
 
 // Form Elements
 const insertDiv = document.querySelector('#card-insert');
@@ -95,6 +99,10 @@ const openPopupModal = (e) => {
 
       setFormAction(whichComponent, whichAction, id);
       break;
+    case "timer":
+      form.style.display = 'none';
+      timerDiv.style.display = 'block';
+      break;
     default:
       popupFor.innerHTML = "Add";
   }
@@ -118,6 +126,10 @@ const closePopupModal = (e) => {
 
     insertDiv.style.display = 'block';
     deleteDiv.style.display = 'none';
+
+    form.style.display = 'block';
+    timerDiv.style.display = 'none';
+
   }
 }
 
@@ -168,3 +180,6 @@ deleteIconButtons.forEach((btn) => {
   btn.addEventListener('click', setWhichAction)
   btn.addEventListener('click', openPopupModal)
 });
+
+openTimer.addEventListener('click', setWhichComponent)
+openTimer.addEventListener('click', openPopupModal)

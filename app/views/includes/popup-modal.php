@@ -23,5 +23,16 @@
         <button class="btn btn-text btn-success btn-cancel">Cancel</button>
       </div>
     </form>
+    <div class="timer-popup">
+      <div class="timer">
+        <pre>Timer</pre>
+        <h4>09:10:11</h4>
+        <div class="timer-controls">
+          <i class="uil uil-pause"></i>
+          <i class="uil uil-play"></i>
+          <i class="uil uil-repeat"></i>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

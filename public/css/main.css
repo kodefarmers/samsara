@@ -55,28 +55,6 @@ main {
   color: var(--color-primary);
 }
 
-.timer-popup {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 110%;
-  width: 16rem;
-  background: var(--color-light);
-  border-radius: var(--card-border-radius);
-  padding: var(--card-padding);
-}
-
-.timer-popup::before {
-  content: '';
-  width: 1.2rem;
-  height: 1.2rem;
-  display: block;
-  background: var(--color-light);
-  position: absolute;
-  top: 20%;
-  left: -0.6rem;
-  transform: rotate(45deg);
-}
 
 .timer {
   display: flex;
