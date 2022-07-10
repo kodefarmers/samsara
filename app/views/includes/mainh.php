@@ -3,7 +3,7 @@
   <div class="container main__container">
     <div class="main__container-left">
       <div class="sidebar">
-        <a href="<?php echo URLROOT ?>/home" class="sidebar-menuitem<?php echo (CURPAGE == 'home') ? ' active' : NULL  ?>">
+        <a href="<?php echo URLROOT ?>/home" class="sidebar-menuitem<?php echo (CURPAGE == 'home' || CURPAGE == '') ? ' active' : NULL  ?>">
           <span> <i class="uil uil-home sidebar-menuitem-icon"></i> </span>
         </a>
         <a class="sidebar-menuitem open-timer">

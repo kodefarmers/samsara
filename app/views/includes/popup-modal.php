@@ -20,7 +20,7 @@
       <div id="card-delete">
         <p>Are you sure ? This cannot be undone.</p>
         <input class="btn btn-text btn-danger btn-delete" type="submit" value="Delete" />
-        <button class="btn btn-text btn-success btn-cancel">Cancel</button>
+        <!-- <button type="button" class="btn btn-text btn-success btn-cancel popup">Cancel</button> -->
       </div>
     </form>
     <div class="timer-popup">

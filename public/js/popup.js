@@ -57,8 +57,6 @@ const descriptionInput = document.querySelector('#description');
 const dateTimeInput = document.querySelector('#datetime');
 const dateTimeInputDiv = document.querySelector('.popup-card-remainder');
 const saveBtn = document.querySelector('#btn-save');
-const cancelBtn = document.querySelectorAll('.btn-cancel');
-const deleteBtn = document.querySelectorAll('.btn-delete');
 
 const openPopupModal = (e) => {
   let id = e.target.id;

@@ -152,7 +152,7 @@ class Todos extends Controller
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if ($this->todoModel->delete($id)) {
         flash('message', 'Todo task removed');
-        redirect('pages/index');
+        redirect('');
       }
     } else {
       redirect('');
