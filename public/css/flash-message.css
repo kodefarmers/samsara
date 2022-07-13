@@ -1,4 +1,5 @@
 .flash-div {
+  z-index: 105;
   margin-top: 5;
   display: flex;
   justify-content: center;

@@ -1,5 +1,6 @@
 .form-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -14,6 +15,7 @@
   height: 100%;
   background-size: cover;
   filter: blur(10px);
+  z-index: -1;
 }
 
 .entryform {
