@@ -86,6 +86,9 @@ const resetCountdown = () => {
   localStorage.removeItem("counter");
 
   clearInterval(startTimer)
+
+  pauseBtn.style.display = 'none';
+  playBtn.style.display = 'block';
 }
 
 playBtn.addEventListener('click', countdown)

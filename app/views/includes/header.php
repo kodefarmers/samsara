@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
   <title><?php echo SITENAME; ?></title>
+  <link rel="icon" type="image/x-icon" href="<?php echo URLROOT; ?>/img/logo.png">
 
 </head>
 
