@@ -126,7 +126,7 @@ class Users extends Controller
       // Check for user/email
       if ($this->userModel->findUserByEmail($data['email'])) {
       } else {
-        $data['email_error'] = 'Email or password incorrect';
+        $data['email_error'] = 'Incorrect email or password';
       }
 
       // Make sure errors are empty
@@ -137,7 +137,7 @@ class Users extends Controller
           // Create Session
           $this->createUserSession($loggedInUser);
         } else {
-          $data['password_error'] = 'Incorrect Password';
+          $data['password_error'] = 'Incorrect email or password';
           $this->view('users/login', $data);
         }
       } else {
