@@ -13,6 +13,10 @@ nav {
   justify-content: space-between;
 }
 
+.nav__container-logo {
+  color: var(--color-primary);
+}
+
 .nav__profile {
   display: flex;
   justify-content: space-between;
