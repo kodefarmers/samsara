@@ -12,8 +12,6 @@
           <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
         </div>
         <div class="popup-card-remainder">
-          <p>Set Remainder</p>
-          <input type="datetime-local" name="remainder" id="datetime">
         </div>
         <input class="btn btn-text btn-primary" id="btn-save" type="submit" value="Save" />
       </div>
